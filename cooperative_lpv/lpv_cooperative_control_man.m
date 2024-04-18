@@ -44,7 +44,7 @@ F4 = [X*A2' + A2*X + lamda_3*B*Y_max + conj(lamda_3)*Y_max'*B' + 2*kappa*X <= 0]
 F5 = [X*A1' + A1*X + lamda_4*B*Y_min + conj(lamda_4)*Y_min'*B' + 2*kappa*X <= 0];
 F6 = [X*A2' + A2*X + lamda_4*B*Y_max + conj(lamda_4)*Y_max'*B' + 2*kappa*X <= 0];
 
-F = [X>=0, F1, F2, F3, F4, F5, F6, trace(X)==1]; % Tr P = 1?
+F = [X>=0, F1, F2, F3, F4, F5, F6]; % Tr P = 1?
 optimize(F);
 % optimize(F, -trace(X));
 
