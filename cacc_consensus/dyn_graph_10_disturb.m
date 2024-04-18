@@ -1,6 +1,6 @@
 % Author: Minh Phat Do
 % Description: Consensus-based CACC with 
-% dynamic communication topologies
+% dynamic communication topologies + external disturbances
 
 %% Reset workspace
 clear; clc; close all;

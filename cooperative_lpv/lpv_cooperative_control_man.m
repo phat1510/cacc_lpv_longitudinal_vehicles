@@ -1,5 +1,10 @@
-% Author: Minh Phat Do
-% Description: Polytopic lpv cooperative control
+% File name: lpv_cooperative_control_auto.m
+% Author: Phat Do
+% Oct 2023
+% Description: 
+% ---> Use YALMIP Formulate and solve the Semidefinite programming problem in
+% Cooperative Control of Linear Parameter-Vayring Systems
+% ---> Programing mode: Polytopic approach
 
 %% Reset workspace
 clear;
@@ -21,7 +26,6 @@ lamda_3 = lamda_L(3);
 lamda_4 = lamda_L(4);
 
 %% LMIs setup
-
 % Define SDP variables
 X = sdpvar(3,3);
 Y_max = sdpvar(1,3,'full');
@@ -47,7 +51,6 @@ F6 = [X*A2' + A2*X + lamda_4*B*Y_max + conj(lamda_4)*Y_max'*B' + 2*kappa*X <= 0]
 F = [X>=0, F1, F2, F3, F4, F5, F6]; % Tr P = 1?
 optimize(F);
 % optimize(F, -trace(X));
-
 
 %% Results
 % Construct K(theta)

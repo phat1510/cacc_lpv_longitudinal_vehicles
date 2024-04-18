@@ -1,5 +1,14 @@
-clear;
-clc;
+% File name: lpv_cooperative_control_auto.m
+% Author: Phat Do
+% Oct 2023
+% Description: 
+% ---> Use YALMIP Formulate and solve the Semidefinite programming problem in
+% Cooperative Control of Linear Parameter-Vayring Systems
+% ---> Programing mode: define the varying paramters as uncertain 
+% parameters in YALMIP
+clear
+clc
+close all
 
 %% System definition
 
@@ -59,4 +68,4 @@ K1 = value(Y1)*inv(value(X))
 
 %% Results
 % Test the controller on simulink
-sim("lpv_modeling_compact.slx");
+% sim("lpv_modeling_compact.slx");
